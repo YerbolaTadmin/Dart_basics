@@ -1,0 +1,38 @@
+void main() { 
+  double number = 8;
+  print(number.nAlgorithm(8,3));
+} 
+ 
+extension n_sqrt_algorithm on num { 
+  double nAlgorithm(double num1,double poww) { 
+    double mabs(double x) { 
+      if (x<0) { 
+        return -x; 
+      } 
+      else { 
+        return x; 
+      } 
+    } 
+    double numm = num1; 
+    double rootDegree = poww; 
+    print("Число корень которого мы считаем: $numm"); 
+    print("Корень: $rootDegree"); 
+     
+    double eps = 0.00001; 
+    double root = numm / rootDegree; 
+    double rn = numm; 
+    int countiter = 0; 
+    while(mabs(root - rn) >= eps) { 
+      rn = numm; 
+      for (int i=1; i<rootDegree;i++) { 
+        rn = rn / root; 
+      } 
+      root = 0.5 * (rn + root); 
+      countiter++; 
+    } 
+    print("root:"); 
+    return root;
+     
+     
+  } 
+}

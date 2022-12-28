@@ -1,0 +1,24 @@
+import 'dart:math';
+void main() {
+  Point coordin = Point(36,20);
+  coordin.x1 = 8;
+  coordin.y1 = 4;
+  coordin.distanceTO();
+ 
+}
+
+class Point{
+  double x1 = 0;
+  double y1 = 0;
+  double x2 = 0;
+  double y2 = 0;
+  
+  Point(double x2, double y2) {
+    this.x2 = x2;
+    this.y2 = y2;
+  }
+  void distanceTO(){
+    double distance = sqrt(pow(x1-x2,2) + pow(y1 - y2,2));
+    print(distance);
+  }
+}

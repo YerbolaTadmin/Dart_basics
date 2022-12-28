@@ -1,0 +1,34 @@
+1.Задача. НОД 
+void main() {
+   nod(number1,number2){
+    while (number1!=number2) {
+      if (number1 > number2) {
+        number1 = number1 - number2;
+      }
+      else {
+        number2 = number2 - number1;
+      }
+      
+    }
+    print(number1);
+  }
+  nod(50,130);
+}
+НОК
+void main() {
+  nok(number1,number2){
+    int number3 = number1 * number2;
+    while((number1!=0) & (number2 !=0)) {
+      if (number1 > number2) {
+        number1 = number1 % number2;
+      }
+      else {
+        number2 = number2 % number1;
+      }
+      
+        
+    }
+    print(number3 / (number1 + number2));
+  }
+  nok(14,18);
+}

@@ -1,0 +1,24 @@
+void main() {
+  List nums = ['one','two','zero','zero'];
+  List numbers = ['zero','one','two','three','four','five','six','seven','eight','nine'];
+  List strings_numbers = [];
+  
+  void check(n) {
+    for (int i=0; i<n.length;i++) {
+      if (numbers.contains(n[i])) {
+        strings_numbers.add(n[i]);
+      }
+      
+    }
+    List only_numbers = strings_numbers.toSet().toList();
+    Map digits = {'zero':0,'one':1,'two':2,'three':3,'four':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9};
+    List digits2 = [];
+    for (int i=0; i<only_numbers.length;i++) {
+      if (digits.containsKey(only_numbers[i])) {
+        digits2.add(digits[only_numbers[i]]);
+      }
+    }
+    print(digits2);
+  }
+  check(nums);
+}

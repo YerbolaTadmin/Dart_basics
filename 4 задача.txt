@@ -1,0 +1,15 @@
+void main() {
+ List words = ['one','two','three','one','one'];
+  void count_of_strings (n) {
+  Map numbers = {};
+  for (int i=0; i < words.length;i++) {
+    if (!numbers.containsKey(words[i])) {
+      numbers[words[i]] = 1;
+    } else {
+      numbers[words[i]] += 1;
+    }
+  }
+  print(numbers);
+  }
+  count_of_strings(words);
+}

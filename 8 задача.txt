@@ -1,0 +1,53 @@
+void main() {
+  AdminUser admin = AdminUser(['admin@mail.ru']);
+  admin.getMailSystem();
+  UserManager user = UserManager(['ggg@mail.ru']);
+  user.addUser('admin@yahoo.com');
+  user.addUser('user2@telegram.com');
+  user.delUser('ggg@mail.ru');
+  user.showUser();
+}
+
+class User{
+  late List<String> email;
+  User(this.email);
+}
+class AdminUser extends User with mailSystem{
+  AdminUser(List<String> email):super(email);
+}
+class GenericUser extends User {
+  GenericUser(List<String> email):super(email);
+}
+
+mixin mailSystem on User{
+  void getMailSystem() {
+    for (int i=0; i<email.length;i++){
+      String partOfEmail = email[i].split('@')[1];
+      print(partOfEmail);
+    }
+  }
+}
+
+class UserManager <T extends User>{
+  late List<String> email2;
+  UserManager(this.email2);
+  addUser(String item){
+    email2.add(item);
+    print(email2);
+  }
+  delUser(String item) {
+    email2.remove(item);
+    print(email2);
+  }
+  showUser(){
+    for (int i=0;i<email2.length;i++) {
+      if (email2[i].toString().contains('admin')) {
+        String partOfAdmin = email2[i].split('@')[1];
+        print(partOfAdmin);
+      }
+      else {
+        print(email2[i]);
+      }
+    }
+  }
+}
